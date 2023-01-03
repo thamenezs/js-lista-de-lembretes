@@ -45,6 +45,8 @@ function tagLi(lembrete) {
 
     let li = document.createElement('li');
 
+    li.id = lembrete.id;
+
     let span = document.createElement('span');
     span.classList.add('textoTarefa');
     span.innerHTML = lembrete.nome;
