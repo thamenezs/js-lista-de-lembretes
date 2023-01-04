@@ -4,19 +4,8 @@ let buttonCriar = document.querySelector('#buttonCriar');
 let listaTarefas = document.querySelector('#listaTarefas');
 let dbLembretes = [];
 
-// novoLembrete.addEventListener('keypress', (e)=>{
 
-//     if(e.keyCode == 13) {
-//         let lembrete = {
-//             nome: novoLembrete,
-//             data: novoLembreteData,
-//             id: '',
-//         }
 
-//         criarLembrete(lembrete);
-
-//     }
-// });
 
 buttonCriar.addEventListener('click', (e) => {
     let lembrete = {
@@ -40,9 +29,11 @@ function criarLembrete(lembrete) {
     dbLembretes.push(lembrete);
     localStorage.setItem('listaTarefas', JSON.stringify(dbLembretes));
     let li = tagLi(lembrete);
+    
     listaTarefas.appendChild(li);
     novoLembrete.value = '';
     novoLembreteData.value = '';
+    
 
 }
 
@@ -53,13 +44,15 @@ function tagLi(lembrete) {
 
     li.id = lembrete.id;
 
+    let date = document.createElement('date');
+    date.classList.add('dataTarefa');
+    date.innerHTML = lembrete.data;
+
     let span = document.createElement('span');
     span.classList.add('textoTarefa');
     span.innerHTML = lembrete.nome;
 
-    let date = document.createElement('date');
-    date.classList.add('dataTarefa');
-    date.innerHTML = lembrete.data;
+   
     
     let div = document.createElement('div');
 
@@ -69,17 +62,18 @@ function tagLi(lembrete) {
     btn.setAttribute('onclick', 'excluir('+lembrete.id+')');
 
     div.appendChild(btn);
-    
+    date.appendChild(li);
     li.appendChild(span);
-    li.appendChild(date);
+    
     li.appendChild(div);
 
+    return date;
     return li;
 
 }
 
 function excluir(idLembrete) {
-    let confirmacao = window.confirm('Tem certeza que deseja excluir o lembrete?' + idLembrete);
+    let confirmacao = window.confirm('Tem certeza que deseja excluir o lembrete?');
     if(confirmacao){
         let li = document.getElementById(''+ idLembrete + '');
         if(li){
@@ -97,7 +91,6 @@ function validaNome(nomeLembrete){
 }
 
 function validaData(dataLembrete){
-    console.log(dataLembrete);
     const localDate = new Date();
     const insertDate = new Date(dataLembrete);
     insertDate.setDate(insertDate.getDate() + 1);
