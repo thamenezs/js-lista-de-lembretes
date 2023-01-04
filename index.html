@@ -3,15 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lembretes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    
+    <title>Lembretes</title>    
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
   </head>
@@ -19,9 +12,10 @@
   <body>
    <div class="conteudo">
     <div class="topo">
-      Novo lembrete
-      <input type="text" id="novoLembrete" placeholder="Alerta">
-      Data
+     <h2>Novo lembrete</h2>
+      <h3>Nome</h3>
+      <input type="text" id="novoLembrete" placeholder="Lembrar de...">
+      <h3>Data</h3>
       <input type="date" id="novoLembreteData">
       <button id="buttonCriar">
         <i class="fa fa-plus-square" aria-hidden="true"></i> Criar lembrete
@@ -30,9 +24,12 @@
     
 
    <ul id="listaTarefas">
-    Lista de Tarefas <br>
-   </ul>
-  
-  <script src="js/tarefas.js"></script>
+    <h2>Lista de Tarefas </h2>
+   
+  <dl id="testeNovo">
+    
+  </dl>
+</ul>
+  <script src="js/script.js"></script>
   </body>
 </html>

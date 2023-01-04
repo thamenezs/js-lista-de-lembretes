@@ -1,44 +1,53 @@
 body{
-    background: black;
+    background: whitesmoke;
     color: white;
-    margin: 0;
-    font-size: 16px;
+    font-size: 22px;
+
 }
 
 .conteudo{
-
-    margin: 0 auto;
     max-width: 450px;
+    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    background: gray;
-    padding: 3%;
+    background: rgb(128, 128, 128);
+    padding: 30px;
     border-radius: 10px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    
 
 }
 
 .topo input{
     font-size: 17px;
     display: flex;
-   justify-content: space-between;
-   padding: 15px;
-   border-radius: 12px;
-    border: 1px solid rebeccapurple;
+    padding: 15px;
+    border-radius: 12px;
+    border: 3px solid rebeccapurple;
     outline: none;
+    width: 350px;
+
 }
 
 .topo button{
-    width: 300px;
+    width: 200px;
+    font-size: 18px;
     margin-top: 15px;
     border-radius: 10px;
     color: white;
     background-color: rebeccapurple;
     border: none;
     outline: none;
+    height: 35px;
+    margin-left: 100px;
+   
 }
 
 .topo button:hover{
     background: rgb(125, 99, 151);
+    cursor: pointer;
+
 }
 
 #listaTarefas{
@@ -48,46 +57,46 @@ body{
     size: 100px;
     justify-content: space-between;
     display: flow;
+    font-size: 22px;
 
 }
 
-.textoTarefa{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 290px;
-    white-space: nowrap;
-}
 
-.dataTarefa{
-    
-    text-overflow: ellipsis;
-    width: 200px;
-    
-    
-}
-
-#listaTarefas li{
+#listaTarefas {
     margin-top: 20px;
-    background: rgb(204, 204, 204);
-    color: black;
+    color: white;
     list-style: none;
-    display: flex;
-    border-radius: 5px;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
+    border-radius: 10px;
+
 }
 
 .btn-delete{
-    border-radius: 30px;
-    border: 1px solid white;
     cursor: pointer;
+    padding: 5px;
+    
 }
 
 .btn-delete:hover{
     color: rebeccapurple;
 }
 
-input{
-    min-width: 300px;
+
+
+ul {
+    padding: 10px;
+    margin-left: 0px;
 }
+
+
+dd{
+    margin: 0;
+    word-break: break-word;
+    width: 400px;
+    justify-content: space-between;
+
+}
+
+dt{
+    padding: 10px;
+}
+
