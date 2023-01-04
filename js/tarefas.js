@@ -2,6 +2,7 @@ let novoLembrete = document.querySelector('#novoLembrete');
 let novoLembreteData = document.querySelector('#novoLembreteData');
 let buttonCriar = document.querySelector('#buttonCriar');
 let listaTarefas = document.querySelector('#listaTarefas');
+let dbLembretes = [];
 
 // novoLembrete.addEventListener('keypress', (e)=>{
 
@@ -24,22 +25,27 @@ buttonCriar.addEventListener('click', (e) => {
         id: gerarId(),
     }
 
-    criarLembrete(lembrete);
+    if(validaNome(lembrete.nome) && validaData(lembrete.data)) {
+        criarLembrete(lembrete);
+    }
+    
+});
 
-})
 
 function gerarId() {
     return Math.floor(Math.random() * 3000);
 }
 
 function criarLembrete(lembrete) {
+    dbLembretes.push(lembrete);
+    localStorage.setItem('listaTarefas', JSON.stringify(dbLembretes));
     let li = tagLi(lembrete);
     listaTarefas.appendChild(li);
     novoLembrete.value = '';
     novoLembreteData.value = '';
 
-
 }
+
 
 function tagLi(lembrete) {
 
@@ -70,8 +76,6 @@ function tagLi(lembrete) {
 
     return li;
 
-
-
 }
 
 function excluir(idLembrete) {
@@ -82,4 +86,27 @@ function excluir(idLembrete) {
             listaTarefas.removeChild(li);
         }
     }
+}
+
+
+function validaNome(nomeLembrete){
+    if(nomeLembrete.length < 1 || nomeLembrete == null ){
+        alert('Preencha corretamente o nome da tarefa!');
+        return false;
+    } else return true;
+}
+
+function validaData(dataLembrete){
+    console.log(dataLembrete);
+    const localDate = new Date();
+    const insertDate = new Date(dataLembrete);
+    insertDate.setDate(insertDate.getDate() + 1);
+
+    if(dataLembrete == "" || dataLembrete == null ) {
+        alert('Preencha corretamente a data da tarefa!');
+        return false;
+    } else if(localDate.toLocaleDateString() > insertDate.toLocaleDateString()) {
+        alert('Insira uma data futura');
+        return false;
+    } else return true;
 }
