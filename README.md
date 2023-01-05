@@ -11,19 +11,19 @@ Instruções
 - O lembrete será adicionado à "Lista de tarefas" abaixo
 - Para deletar um lembrete, clique no ícone de lixeira que estará localizado à direita do nome do lembrete na lista
 
-##⚙️ Executando os testes
+#⚙️ Executando os testes
 Vide README na pasta BDD
 
-##🛠️ Construído com
+#🛠️ Construído com
 
-Javascript
-CSS
-HTML
-Repositório e hospedagem no GitHub/GitHub Pages
-Ruby
-Cucumber
-Selenium
-Edição do código, controle de versionamento e refatoração do código: VSCode
+- Javascript
+- CSS
+- HTML
+- Repositório e hospedagem no GitHub/GitHub Pages
+- Ruby
+- Cucumber
+- Selenium
+- Edição do código, controle de versionamento e refatoração do código: VSCode
 
 ✒️ Autores
 Thais Menezes Alves de Souza
