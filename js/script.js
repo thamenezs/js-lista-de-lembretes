@@ -2,11 +2,11 @@ let novoLembrete = document.querySelector('#novoLembrete');
 let novoLembreteData = document.querySelector('#novoLembreteData');
 let buttonCriar = document.querySelector('#buttonCriar');
 let listaTarefas = document.querySelector('#listaTarefas');
-let dl = document.querySelector('#testeNovo');
+let dl = document.querySelector('#listaOrdenada');
 let dbLembretes = [];
 
 
-buttonCriar.addEventListener('click', (e) => {
+buttonCriar.addEventListener('click', (e) => { //cria funcionalidade do botao de criar
     let lembrete = {
         nome: novoLembrete.value,
         data: novoLembreteData.value,
@@ -20,7 +20,7 @@ buttonCriar.addEventListener('click', (e) => {
 });
 
 
-function criarLembrete(lembrete) {
+function criarLembrete(lembrete) { 
     dbLembretes.push(lembrete);
     localStorage.setItem('listaTarefas', JSON.stringify(dbLembretes));
 
@@ -36,20 +36,23 @@ function criarLembrete(lembrete) {
 
 }
 
-function gerarId() {
+function gerarId() { //gera id aleatorio para os lembretes
     return Math.floor(Math.random() * 3000);
 }
 
 function limparFilhos() {
     dl.innerText = ""
 }
-
-function tagDl(lembrete) {
-    
-    let date = new Date(lembrete.data);
+function criaIdDatas(dataLembrete){ //cria id para datas dos lembretes
+    let date = new Date(dataLembrete);
     idDate = date.getTime();
     idDate = String(idDate);
+    return idDate;
+}
 
+function tagDl(lembrete) {
+
+    idDate = criaIdDatas(lembrete.data);
 
     let dt = document.getElementById(idDate);
 
