@@ -5,6 +5,7 @@ O projeto consiste em um sistema onde um usuário poderá adicionar lembretes, q
  
 
 Instruções
+- Acesse o site (https://thamenezs.github.io/js-lista-de-lembretes/)
 - Digite um nome para o lembrete
 - Digite uma data válida (hoje ou futura)
 - Clique em "criar lembrete"
