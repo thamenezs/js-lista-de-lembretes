@@ -3,7 +3,6 @@
 
 O projeto consiste em um sistema onde um usuário poderá adicionar lembretes, que serão exibidos listados de acordo com a data cadastrada (podendo ser a data atual ou futura, nunca uma data passada). O usuário também poderá remover lembretes.
  
-O projeto foi construído via aplicação Web para colocar em prática os ensinamentos do primeiro semestre da PUC Minas em Análise e Desenvolvimento de sistemas, utilizando majoritariamente o Javascript, apesar de ter mais contato com linguagens backend como java e python
 
 Instruções
 - Digite um nome para o lembrete
