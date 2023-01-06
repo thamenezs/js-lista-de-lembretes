@@ -3,9 +3,8 @@ class LembretePage < SitePrism::Page
     element :campoTarefa, :id, "novoLembrete"
     element :campoData, :id, "novoLembreteData"
     element :botaoCriar, :button, "buttonCriar"
-    element :tarefaData, :xpath, "//dt[.]"
     element :tarefa, :xpath, "//dd[.]"
-
+    element :tarefaData, :xpath, "//dt[.]"
 
     def criarTarefa(lembrete, data)
         campoTarefa.set (lembrete)
@@ -15,6 +14,6 @@ class LembretePage < SitePrism::Page
 
     def validarTarefa(nomeLembrete, dataLembrete)
         expect(tarefa.text).to eql(nomeLembrete)
-        expect(tarefaData.text).to eql(dataLembrete)
+        expect(tarefaData.text).to eql(dataLembrete + "\n" + nomeLembrete)
     end
 end 
