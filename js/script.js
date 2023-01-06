@@ -5,7 +5,6 @@ let listaTarefas = document.querySelector('#listaTarefas');
 let dl = document.querySelector('#listaOrdenada');
 let dbLembretes = [];
 
-
 buttonCriar.addEventListener('click', (e) => { //cria funcionalidade do botao de criar
     let lembrete = {
         nome: novoLembrete.value,
@@ -43,6 +42,7 @@ function gerarId() { //gera id aleatorio para os lembretes
 function limparFilhos() {
     dl.innerText = ""
 }
+
 function criaIdDatas(dataLembrete){ //cria id para datas dos lembretes
     let date = new Date(dataLembrete);
     idDate = date.getTime();
@@ -76,11 +76,10 @@ function tagDl(lembrete) {
     
     dt.appendChild(dd);
     dd.appendChild(btn);
-
+    
     return dl;
 
 }
-
 
 function excluir(idLembrete) {
     let confirmacao = window.confirm('Tem certeza que deseja excluir o lembrete?');
@@ -102,7 +101,7 @@ function excluir(idLembrete) {
 
 
 function validaNome(nomeLembrete){
-    if(nomeLembrete.length < 1 || nomeLembrete == null ){
+    if(nomeLembrete == null || nomeLembrete.length < 1){
         alert('Preencha corretamente o nome da tarefa!');
         return false;
     } else return true;

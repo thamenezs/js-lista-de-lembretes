@@ -10,15 +10,18 @@ Instruções (instalação e execução do teste automatizado)
 - Instale o ruby (https://rubyinstaller.org/downloads/)
 - Instale o chromedriver (https://chromedriver.chromium.org/downloads)
 - Após instalado e adicionados ao PATH
+- Instale cucumber
+    - gem install cucumber
+- Instale capybara
+    - gem install capybara
 - Instale o gerenciador de dependencias (bundler com o comando abaixo:)
     - gem install bundle
 - Instale as dependencias com o comando:
     - bundler install
 
-
 ⚙️ Executando os testes
 
-Para executar os testes, simplesmente execute o comando:
+Para executar os testes, simplesmente execute o comando abaixo:
     - cucumber
-Dentro da pasta
+Dentro da pasta BDD-AutomationCase-Ruby
 
